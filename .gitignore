@@ -1,0 +1,19 @@
+# Virtual environment
+img/
+venv/
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Django specific
+db.sqlite3
+
+# AWS credentials (never commit these!)
+*.pem
+*.key
+
+# Node (when frontend is added)
+node_modules/
+build/
