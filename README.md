@@ -30,6 +30,24 @@ Users can upload images, automatically generate thumbnails, view them, and delet
 
 ---
 
+## AWS Setup & IAM Roles
+
+- **S3 Buckets:**  
+  - `uploads/` – stores original images  
+  - `thumbnails/` – stores resized thumbnails  
+
+- **IAM Role for Lambda:**  
+  - Permissions attached:
+    - `s3:GetObject` – Lambda reads uploaded images  
+    - `s3:PutObject` – Lambda writes resized thumbnails  
+    - `CloudWatchLogs:CreateLogGroup` & `CloudWatchLogs:PutLogEvents` – allows logging  
+  - Role is attached to Lambda function for secure serverless processing  
+
+- **IAM User / Credentials:**  
+  - For local testing, AWS credentials were temporarily used in Django backend  
+  - In production, environment variables or AWS Secrets Manager is recommended  
+
+
 ## Project Structure
 
 serverless-thumbnail-img/
@@ -104,6 +122,7 @@ serverless-thumbnail-img/
 
 
 Angad Singh Sandhu – Full-stack Developer | [LinkedIn](https://www.linkedin.com/in/angad277/)
+
 
 
 
