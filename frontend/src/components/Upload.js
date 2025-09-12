@@ -20,13 +20,13 @@ function Upload({ onUploadSuccess }) {
       await axios.put(uploadUrl, file, {
         headers: { "Content-Type": file.type },
       });
-
+      console.log(uploadUrl)
       alert("Upload successful!");
       onUploadSuccess();
       setFile(null); // reset input
-    } catch (err) {
-      console.error("Upload failed", err);
-      alert("Upload failed!");
+    }  catch (err) {
+  console.error("Upload failed", err.response ? err.response.data : err.message);
+  alert("Upload failed! Check console for details.");
     }
   };
 

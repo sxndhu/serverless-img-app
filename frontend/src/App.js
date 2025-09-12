@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   const [refresh, setRefresh] = useState(false);
 
-  const triggerRefresh = () => setRefresh(!refresh);
+  const triggerRefresh = () => setRefresh((prev) => !prev);
 
   return (
     <div className="container mt-5">

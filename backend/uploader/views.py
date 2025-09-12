@@ -4,7 +4,12 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 
 BUCKET_NAME = ""
-s3_client = boto3.client('s3')
+s3_client = boto3.client(
+    's3',
+    aws_access_key_id="",
+    aws_secret_access_key="",
+    region_name="eu-west-2"  # or your actual region
+)
 
 def hello(request):
     return HttpResponse("Hello, backend is working!")
@@ -27,6 +32,7 @@ def presign_upload(request):
 
     return JsonResponse({'uploadUrl' : upload_url, 'key' : key})
 
+@csrf_exempt
 def list_thumbnails(request):
     
     response = s3_client.list_objects_v2(
@@ -37,7 +43,7 @@ def list_thumbnails(request):
     urls = []
     if "Contents" in response:
         for obj in response["Contents"]:
-            key = obj["key"]
+            key = obj["Key"]
             if key.endswith("/"):
                 continue
             
@@ -48,7 +54,7 @@ def list_thumbnails(request):
             )
             urls.append({'key' : key, 'url' : presigned_url})
 
-    return JsonResponse({'thumnbnails' : urls})
+    return JsonResponse({'thumbnails' : urls})
 
 
 @csrf_exempt
@@ -62,6 +68,11 @@ def delete_thumbnails(request):
                 return JsonResponse({"error" : "No key provided"}, status = 400)
 
             s3_client.delete_object(Bucket = BUCKET_NAME, Key = key)
+
+            if key.startswith("thumbnails/"):
+                original_key = "uploads/" + key[len("thumbnails/"):]
+                s3_client.delete_object(Bucket=BUCKET_NAME, Key=original_key)
+
             return JsonResponse({"status" : "deleted", "key" : key})
         except Exception as e:
             return JsonResponse({"error" : str(e) }, status = 500)

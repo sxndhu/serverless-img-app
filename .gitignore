@@ -10,10 +10,15 @@ __pycache__/
 # Django specific
 db.sqlite3
 
-# AWS credentials (never commit these!)
 *.pem
 *.key
 
-# Node (when frontend is added)
+# Node 
 node_modules/
 build/
+
+# Lambda deployment zip
+lambda/lambda_function.zip
+lambda/package
+
+.vscode/

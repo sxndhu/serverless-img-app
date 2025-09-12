@@ -8,7 +8,7 @@ function Thumbnails({ refresh }) {
   const fetchThumbnails = async () => {
     try {
       const res = await API.get("/list-thumbnails/");
-      setThumbnails(res.data.thumnbnails || []);
+      setThumbnails(res.data.thumbnails || []);
     } catch (err) {
       console.error("Failed to fetch thumbnails", err);
     }
@@ -19,7 +19,7 @@ function Thumbnails({ refresh }) {
   }, [refresh]);
 
   const handleDelete = (key) => {
-    setThumbnails(thumbnails.filter((t) => t.key !== key));
+    setThumbnails((prev) => prev.filter((t) => t.key !== key));
   };
 
   return (
