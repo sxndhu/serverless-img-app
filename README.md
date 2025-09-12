@@ -33,10 +33,15 @@ Users can upload images, automatically generate thumbnails, view them, and delet
 ## Project Structure
 
 serverless-thumbnail-img/
+
 ├─ backend/ # Django project
+
 ├─ frontend/ # React project
+
 ├─ lambda/ # Python Lambda function for resizing images
+
 ├─ img/ # Python virtual environment (backend)
+
 ├─ README.md
 
 ## Setup Instructions
@@ -102,4 +107,5 @@ serverless-thumbnail-img/
 
 
 Angad Singh Sandhu – Full-stack Developer | [LinkedIn](https://www.linkedin.com/in/angad277/)
+
 
