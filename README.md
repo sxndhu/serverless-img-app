@@ -107,9 +107,10 @@ serverless-thumbnail-img/
 
 1. Working with presigned URLs for secure S3 uploads.
 2. Serverless architecture and integrating AWS Lambda with S3.
-3. Handling CORS issues between React and Django.
-4. State management in React for auto-refreshing content.
-5. Writing clean, production-ready full-stack applications.
+3. Demonstrated IAM role configuration and security best practices
+4. Handling CORS issues between React and Django.
+5. State management in React for auto-refreshing content.
+6. Writing clean, production-ready full-stack applications.
 
 ## Future Improvements
 
@@ -122,6 +123,7 @@ serverless-thumbnail-img/
 
 
 Angad Singh Sandhu – Full-stack Developer | [LinkedIn](https://www.linkedin.com/in/angad277/)
+
 
 
 
