@@ -49,7 +49,7 @@ serverless-thumbnail-img/
 ### Backend (Django)
 
 1. Activate your Python environment:
-- source img/bin/activate
+<pre>source img/bin/activate </pre>
 
 2. Install dependencies:
 - pip install -r requirements.txt
@@ -107,5 +107,6 @@ serverless-thumbnail-img/
 
 
 Angad Singh Sandhu – Full-stack Developer | [LinkedIn](https://www.linkedin.com/in/angad277/)
+
 
 
