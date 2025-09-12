@@ -44,30 +44,29 @@ serverless-thumbnail-img/
 ### Backend (Django)
 
 1. Activate your Python environment:
-
-source img/bin/activate
+- source img/bin/activate
 
 2. Install dependencies:
-pip install -r requirements.txt
+- pip install -r requirements.txt
 
 3. Run Django server:
-python manage.py runserver
+- python manage.py runserver
 
 ### Frontend (React)
 
 1. Navigate to the frontend folder:
 
-cd frontend
+- cd frontend
 
 
 2. Install dependencies:
 
-npm install
+- npm install
 
 
 3. Start React development server:
 
-npm start
+- npm start
 
 
 ## Usage 
@@ -103,3 +102,4 @@ npm start
 
 
 Angad Singh Sandhu – Full-stack Developer | [LinkedIn](https://www.linkedin.com/in/angad277/)
+
