@@ -44,7 +44,7 @@ serverless-thumbnail-img/
 ### Backend (Django)
 
 1. Activate your Python environment:
-```bash
+
 source img/bin/activate
 
 2. Install dependencies:
@@ -100,5 +100,6 @@ npm start
 4. Deploy frontend on Vercel / Netlify and backend on AWS Elastic Beanstalk.
 
 # Author
+
 
 Angad Singh Sandhu – Full-stack Developer | [LinkedIn](https://www.linkedin.com/in/angad277/)
